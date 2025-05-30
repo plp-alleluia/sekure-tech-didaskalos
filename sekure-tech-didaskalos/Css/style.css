@@ -1,0 +1,420 @@
+/* Variáveis CSS para fácil personalização */
+:root {
+    --primary-color: #0056b3; /* Um azul mais institucional/tecnológico */
+    --secondary-color: #4a4a4a; /* Cinza escuro para contraste */
+    --dark-color: #2c3e50; /* Azul escuro quase preto para texto e footer */
+    --light-color: #ecf0f1; /* Cinza claro para seções de fundo */
+    --text-color: #34495e; /* Texto principal */
+    --font-family: 'Segoe UI', Arial, sans-serif; /* Fonte mais clean */
+}
+
+/* Reset básico e tipografia (permanece similar) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-color);
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    color: var(--dark-color);
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Botões (cores ajustadas) */
+.btn {
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: bold;
+    text-align: center;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: 1px solid var(--primary-color);
+}
+
+.primary-btn:hover {
+    background-color: #003f8c;
+    border-color: #003f8c;
+    text-decoration: none;
+}
+
+.secondary-btn {
+    background-color: var(--secondary-color);
+    color: #fff;
+    border: 1px solid var(--secondary-color);
+}
+
+.secondary-btn:hover {
+    background-color: #333;
+    border-color: #333;
+    text-decoration: none;
+}
+
+/* Header (permanece similar) */
+header {
+    background-color: #fff;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--dark-color);
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 30px;
+}
+
+header nav ul li a {
+    color: var(--dark-color);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.menu-toggle {
+    display: none; /* Escondido por padrão em desktop */
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--dark-color);
+}
+
+/* Hero Section (imagem de fundo atualizada) */
+.hero {
+    background: url('../img/hero-sdtk-bg.jpg') no-repeat center center/cover; /* Imagem de fundo temática de TI */
+    color: #fff;
+    text-align: center;
+    padding: 150px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 600px;
+    position: relative; /* Para overlay */
+}
+
+.hero::before { /* Overlay escuro para melhor legibilidade do texto */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Escurece a imagem */
+    z-index: 1;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2; /* Garante que o conteúdo esteja acima do overlay */
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    color: #eee;
+}
+
+/* Seções Gerais */
+section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+section:nth-child(even) {
+    background-color: var(--light-color);
+}
+
+/* Serviços (ícones ajustados) */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.service-item {
+    background-color: #fff;
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.service-item i { /* Ícones */
+    font-size: 50px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.service-item h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Portfólio (similar, apenas imagens e textos) */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.portfolio-item {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.portfolio-item h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.portfolio-item p {
+    padding: 0 20px 20px;
+    font-size: 16px;
+}
+
+/* Sobre Nós (similar) */
+.about .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.team-member {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.team-member img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid var(--primary-color);
+}
+
+.team-member h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.team-member p {
+    font-size: 16px;
+    color: var(--secondary-color);
+}
+
+/* Contacto (com informações de contato diretas) */
+.contact-form {
+    max-width: 600px;
+    margin: 40px auto 0;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.contact-form .btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+}
+
+.contact-info {
+    margin-top: 30px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    font-weight: bold;
+}
+
+/* Footer (cor e texto atualizados) */
+footer {
+    background-color: var(--dark-color);
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Responsividade (permanece similar) */
+@media (max-width: 768px) {
+    header nav {
+        display: none; /* Esconde o menu de navegação em telas menores */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 80px; /* Ajuste conforme a altura do seu header */
+        left: 0;
+        background-color: #fff;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+        padding: 20px 0;
+    }
+
+    header nav.active {
+        display: flex; /* Mostra o menu quando ativo */
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul li {
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block; /* Mostra o ícone do menu hambúrguer */
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .service-grid, .portfolio-grid, .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        padding: 0 20px;
+    }
+}
+
+/* Ícones (simulando Font Awesome para SDtK) */
+.icon-security:before { content: '🛡️'; } /* Cibersegurança */
+.icon-hardware-software:before { content: '⚙️'; } /* Hardware/Software */
+.icon-maintenance:before { content: '🛠️'; } /* Manutenção */
+.icon-training:before { content: '🎓'; } /* Treinamento */
+.icon-linkedin:before { content: '💼'; }
